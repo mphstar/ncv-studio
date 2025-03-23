@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function AboutSection() {
@@ -40,9 +41,11 @@ export default function AboutSection() {
           {/* Animated Image Grid */}
           <div className="relative w-full  overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
-              <img
-                src="https://random.imagecdn.app/400/300"
+              <Image
+                src="/assets/images/overview-logo.jpg"
                 alt="Logo"
+                width={400}
+                height={300}
                 className="w-full h-full object-contain rounded-md"
               />
             </div>
@@ -71,15 +74,21 @@ export default function AboutSection() {
             </h3>
             <ul className="text-gray-600 dark:text-gray-400 mt-2 space-y-2 list-disc list-inside">
               <li>
-                <span className="text-black dark:text-white font-semibold">Creativity:</span> We
-                think beyond limits.
+                <span className="text-black dark:text-white font-semibold">
+                  Creativity:
+                </span>{" "}
+                We think beyond limits.
               </li>
               <li>
-                <span className="text-black dark:text-white font-semibold">Innovation:</span> We
-                explore new possibilities.
+                <span className="text-black dark:text-white font-semibold">
+                  Innovation:
+                </span>{" "}
+                We explore new possibilities.
               </li>
               <li>
-                <span className="text-black dark:text-white font-semibold">Collaboration:</span>{" "}
+                <span className="text-black dark:text-white font-semibold">
+                  Collaboration:
+                </span>{" "}
                 Together, we create magic.
               </li>
             </ul>

@@ -24,34 +24,39 @@ export default function HeroSection() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
             }}
           >
-            From Concept to Creation, From Creation to Meaning.
+            From Concept to <span className="font-semibold text-black dark:text-white">Creation</span>, From Creation to <span className="font-semibold text-black dark:text-white">Meaning</span>.
           </motion.p>
 
           {/* Animasi teks besar NCV Studio */}
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mt-4 leading-tight flex"
+            className="text-6xl md:text-6xl  mt-4 leading-tight flex"
             variants={{
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
             }}
           >
-            {text.map((char, index) => (
-              <motion.span
-                key={index}
-                className="relative"
-                variants={{
-                  hidden: { opacity: 0, y: 20, scale: 0.8 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    transition: { duration: 0.6, ease: "easeInOut" },
-                  },
-                }}
-              >
-                {char === " " ? "\u00A0" : char} {/* Spasi tetap rapi */}
-              </motion.span>
-            ))}
+            {text.map((char, index) => {
+              // NCV dibuat miring dan tebal, Studio tetap normal
+              const isNCV = index < 3; // 3 huruf pertama = "NCV"
+
+              return (
+                <motion.span
+                  key={index}
+                  className={`relative ${isNCV ? "font-bold italic" : "font-light text-gray-600 dark:text-gray-200"}`}
+                  variants={{
+                    hidden: { opacity: 0, y: 20, scale: 0.8 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: { duration: 0.6, ease: "easeInOut" },
+                    },
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char} {/* Spasi tetap rapi */}
+                </motion.span>
+              );
+            })}
           </motion.h1>
         </motion.div>
 

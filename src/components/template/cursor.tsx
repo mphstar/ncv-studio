@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import useMouse from "@react-hook/mouse-position";
 import { useTheme } from "next-themes";
@@ -7,6 +7,14 @@ import { useTheme } from "next-themes";
 const Cursor = ({ children }: { children: React.ReactNode }) => {
   const [isFocused, setIsFocused] = useState(true);
   const { theme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => setIsMobile(window.innerWidth < 768);
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const ref = React.useRef<HTMLDivElement>(null);
   const mouse = useMouse(ref as React.RefObject<HTMLElement>, {
@@ -57,15 +65,14 @@ const Cursor = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div ref={ref} onMouseEnter={handleFocus} onMouseLeave={handleBlur}>
-      {mouse.x !== null && mouse.y !== null && (
+      {/* Jika bukan di mobile, tampilkan kursor */}
+      {!isMobile && mouse.x !== null && mouse.y !== null && (
         <motion.div
           variants={variants}
           className="circle"
           animate={isFocused ? cursorVariant : "hidden"}
           transition={spring}
-        >
-          {/* <span className="cursorText">{cursorText}</span> */}
-        </motion.div>
+        />
       )}
       {children}
     </div>

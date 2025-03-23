@@ -49,9 +49,11 @@ export const Footer = () => (
     <Container className="flex flex-col justify-between lg:flex-row">
       <div>
         <div className="flex h-full flex-row justify-between lg:flex-col">
-          <div className="flex items-center text-grey">
-          Copyright © 2025 NCV Studio.
-          </div>
+          <p className="flex items-center text-grey">
+            Copyright © 2025 <span className="italic font-bold ml-1">NCV</span>
+            <span className="ml-1">Studio.</span>
+          </p>
+
           <div className="mt-auto flex space-x-4 text-grey">
             <FaYoutube />
             <FaInstagram />

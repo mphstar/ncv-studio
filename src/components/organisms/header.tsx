@@ -6,6 +6,8 @@ import { ModeToggle } from "../atoms/DarkModeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
+import { TbEyeFilled } from "react-icons/tb";
 
 const sections = ["portfolio", "services", "about", "contact"];
 
@@ -29,15 +31,22 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center py-6 px-4 sticky top-0 z-20 backdrop-blur-sm transition-colors">
       {/* Logo */}
-      <h1
+      <Link
+        className="w-[170px]"
+        href="/"
         onClick={() => scrollToSection("home")}
-        className="text-2xl text-black dark:text-white font-semibold"
       >
-        Ncv Studio
-      </h1>
+        <div className="flex items-center gap-2 whitespace-nowrap">
+          <TbEyeFilled className="w-8 h-8" />{" "}
+          <p>
+            <span className="italic font-bold">NCV</span>{" "}
+            <span className="text-gray-600 dark:text-gray-300">Studio</span>
+          </p>
+        </div>
+      </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:block">
+      <nav className="hidden md:block w-full items-center justify-items-center">
         <ul className="flex gap-2 items-center text-sm font-semibold">
           {sections.map((item, index) => (
             <li key={index}>
@@ -53,16 +62,18 @@ const Header = () => {
       </nav>
 
       {/* Mobile Menu Button */}
-      <button
-        className="md:hidden text-black dark:text-white"
-        onClick={() => setIsOpen(true)}
-      >
-        <Menu size={28} />
-      </button>
+      <div className="w-full md:w-[170px] flex justify-end justify-items-end">
+        <button
+          className="md:hidden text-black dark:text-white"
+          onClick={() => setIsOpen(true)}
+        >
+          <Menu size={28} />
+        </button>
 
-      {/* Dark Mode Toggle */}
-      <div className="hidden md:block">
-        <ModeToggle />
+        {/* Dark Mode Toggle */}
+        <div className="hidden md:block">
+          <ModeToggle />
+        </div>
       </div>
 
       {/* Fullscreen Mobile Navigation */}

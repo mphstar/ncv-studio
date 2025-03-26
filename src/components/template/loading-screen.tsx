@@ -15,7 +15,7 @@ export default function LoadingScreen({ onFinish }: { onFinish: () => void }) {
   }, []);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-black z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-background z-50">
       <motion.h1
         className="text-6xl md:text-8xl flex text-black dark:text-white"
         initial="hidden"

@@ -19,7 +19,7 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <h2 className="text-3xl md:text-5xl font-bold uppercase text-black dark:text-gray-300 tracking-wide">
-          About <span className="text-white">NCV</span>
+          About <span className="text-black dark:text-white">NCV</span>
         </h2>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 italic">
           "From Concept to Creation, From Creation to Meaning."

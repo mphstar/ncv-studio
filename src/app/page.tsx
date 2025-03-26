@@ -10,6 +10,7 @@ import LoadingScreen from "@/components/template/loading-screen";
 import ServiceSection from "@/components/sections/service";
 import AboutSection from "@/components/sections/about";
 import Header from "@/components/organisms/header";
+import FAQSection from "@/components/sections/faq";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ export default function Home() {
         <Portfolio />
         <ServiceSection />
         <AboutSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />

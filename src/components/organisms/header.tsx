@@ -37,7 +37,8 @@ const Header = () => {
         onClick={() => scrollToSection("home")}
       >
         <div className="flex items-center gap-2 whitespace-nowrap">
-          <TbEyeFilled className="w-8 h-8" />{" "}
+          <Image src={"/assets/images/logo-dark.png"} alt="Logo" width={300} height={300} className="h-6 w-6 flex dark:hidden" />
+          <Image src={"/assets/images/logo-white.png"} alt="Logo" width={300} height={300} className="h-6 w-6 hidden dark:flex" />
           <p>
             <span className="italic font-bold">NCV</span>{" "}
             <span className="text-gray-600 dark:text-gray-300">Studio</span>

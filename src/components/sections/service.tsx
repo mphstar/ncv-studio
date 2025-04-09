@@ -30,7 +30,7 @@ export default function Services() {
           <div
             key={index}
             className={`border-b border-gray-700 pb-4 flex flex-col md:flex-row justify-between md:items-center cursor-pointer transition-all ${
-              selectedService === service.title ? "text-black dark:text-white font-bold text-4xl" : "text-gray-600 dark:text-gray-300 text-2xl"
+              selectedService === service.title ? "text-black dark:text-white font-bold text-2xl" : "text-gray-600 dark:text-gray-300 text-lg"
             }`}
             onClick={() => setSelectedService(service.title)}
           >

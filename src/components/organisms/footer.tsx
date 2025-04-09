@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "../template/container";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import MediaNCV from "@/constant/sosial-media";
 
 const footerLinks = [
   {
@@ -37,9 +38,9 @@ const footerLinks = [
   {
     title: "Connect",
     links: [
-      { title: "Youtube", href: "#" },
-      { title: "Instagram", href: "#" },
-      { title: "TikTok", href: "#" },
+      { title: "Youtube", href: MediaNCV.youtube },
+      { title: "Instagram", href: MediaNCV.instagram },
+      { title: "TikTok", href: MediaNCV.tiktok },
     ],
   },
 ];
@@ -55,9 +56,23 @@ export const Footer = () => (
           </p>
 
           <div className="mt-auto flex space-x-4 text-grey">
-            <FaYoutube />
-            <FaInstagram />
-            <FaTiktok />
+            <a
+              href={MediaNCV.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href={MediaNCV.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+            <a href={MediaNCV.tiktok} target="_blank" rel="noopener noreferrer">
+              <FaTiktok />
+            </a>
           </div>
         </div>
       </div>

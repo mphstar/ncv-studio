@@ -1,3 +1,5 @@
+import MediaNCV from "@/constant/sosial-media";
+
 export default function ContactSection() {
   return (
     <section id="contact" className="flex flex-col md:flex-row justify-between px-4 mt-32">
@@ -10,13 +12,13 @@ export default function ContactSection() {
         </div>
         <div className="">
           <div className="mt-4 flex space-x-6 text-gray-600 dark:text-gray-300">
-            <a href="#" className="hover:text-black hover:dark:text-white">
+            <a href={MediaNCV.youtube} target="_blank" className="hover:text-black hover:dark:text-white">
               Youtube ↗
             </a>
-            <a href="#" className="hover:text-black hover:dark:text-white">
+            <a href={MediaNCV.instagram} target="_blank" className="hover:text-black hover:dark:text-white">
               Instagram ↗
             </a>
-            <a href="#" className="hover:text-black hover:dark:text-white">
+            <a href={MediaNCV.tiktok} target="_blank" className="hover:text-black hover:dark:text-white">
               TikTok ↗
             </a>
           </div>

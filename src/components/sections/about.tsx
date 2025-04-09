@@ -42,11 +42,18 @@ export default function AboutSection() {
           <div className="relative w-full  overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
               <Image
-                src="/assets/images/overview-logo.jpg"
+                src="/assets/images/logo-dark.png"
                 alt="Logo"
-                width={400}
-                height={300}
-                className="w-full h-full object-contain rounded-md"
+                width={500}
+                height={500}
+                className="w-72 h-72 object-contain rounded-md flex dark:hidden"
+              />
+              <Image
+                src="/assets/images/logo-white.png"
+                alt="Logo"
+                width={500}
+                height={500}
+                className="w-72 h-72 object-contain rounded-md hidden dark:flex"
               />
             </div>
           </div>

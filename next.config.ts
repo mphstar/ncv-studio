@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "random.imagecdn.app",
       },
+      {
+        hostname: 'img.youtube.com',
+      }
     ],
   },
 };

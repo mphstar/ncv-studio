@@ -87,13 +87,13 @@ export default function Portfolio() {
                     className="relative group overflow-hidden rounded-lg shadow-md aspect-video cursor-pointer"
                     onClick={() => setActiveVideoId(videoId || "")}
                   >
-                    {work.typeUrl === "youtube" && (
-                      <LiteYouTubeEmbed
-                        id={videoId || ""}
-                        title={work.title}
-                        poster="hqdefault"
-                        webp
-                        noCookie
+                    {work.typeUrl === "youtube" && videoId && (
+                      <Image
+                        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                        alt={work.title}
+                        fill
+                        sizes="100%"
+                        className="object-cover"
                       />
                     )}
 
